@@ -1,0 +1,78 @@
+:root {
+    --dark: #222831;
+    --dark-ligth: #31363F;
+    --white: #EEEEEE;
+    --gold: #c7a438;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
+}
+::selection{
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+
+.notificacion{
+    position: absolute;
+    width: max-content;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    background-color: var(--azul_re_oscuro);
+    color: var(--blanco);
+    box-shadow: var(--box-shadow);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 3s linear;
+}
+
+.notificacion_body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 8px;
+}
+.notificacion_body i{
+    margin: 6px;
+}
+
+.progreso_notificacion{
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: calc(100% - 8px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(to right, var(--azul_re_oscuro), var(--azul_claro));
+    border-radius: inherit;
+    animation: progress 2.5s 0.3s linear;
+}
+
+@keyframes fade-in{
+    5%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    95%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    to{
+        transform: scaleX(1);
+    }
+}
