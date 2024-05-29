@@ -3,7 +3,7 @@ const router = express.Router()
 
 
 router.get('/autenticacion', (req, res)=>{
-    res.send('login')
+    res.render('login/login')
 })
 
 module.exports = router

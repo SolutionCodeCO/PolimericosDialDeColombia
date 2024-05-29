@@ -1,0 +1,106 @@
+<title>Lista de usuarios</title>
+<link rel="stylesheet" href="/css/admin.css">
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">Polimericos Dial de CO</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="buscar..." />
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-user"></i>
+                    <span class="links_name">Usuarios</span>
+                </a>
+                <span class="tooltip">Usuarios</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-chat"></i>
+                    <span class="links_name">Testimonios</span>
+                </a>
+                <span class="tooltip">Testimonios</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-pie-chart-alt-2"></i>
+                    <span class="links_name">Contacto</span>
+                </a>
+                <span class="tooltip">Contacto</span>
+            </li>
+
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="profile.jpg" alt="profileImg" />
+                    <div class="name_job">
+                        <div class="name">Prem Shahi</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <main class="table" id="customers_table">
+            <section class="table__header">
+                <h1>Usuarios Registrados</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="Buscar algún usuario">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                        <label>Export As &nbsp; &#10140;</label>
+                        <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                        <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                        <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                        <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                    </div>
+                </div>
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Nombres <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Email <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Fecha de registro <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Opciones <span class="icon-arrow">&UpArrow;</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 1 </td>
+                            <td>Jhoann Zamudio</td>
+                            <td> SolutionCodeco@gmail.com </td>
+                            <td> 01 Jun, 2024 </td>
+                            <td> <div class="opciones">
+                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                            </div></td>
+                       
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </section>
+
+    <script src="/js/admin.js"></script>
+</body>
