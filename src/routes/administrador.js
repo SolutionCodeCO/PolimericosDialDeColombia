@@ -15,8 +15,9 @@ router.get('/administrador/usuarios', (req, res)=>{
     res.render('admin/usuarios')
 })
 
-router.get('/administrador/contacto', (req, res)=>{
-    res.render('admin/contacto')
+router.get('/administrador/contacto', async (req, res)=>{
+    const contactos = await pool.query('SELECT * FROM contactos')
+    res.render('admin/contacto', {contactos})
 })
 
 module.exports = router

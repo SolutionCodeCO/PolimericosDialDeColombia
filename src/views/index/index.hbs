@@ -26,8 +26,8 @@
            
         </nav>
         <div class="btn-login">
-            <button id="log-in"><a href="/login">Iniciar Sesion</a></button>
-            <button id="log-out"><a href="/login">Registrate</a></button>
+            <button id="log-in"><a href="/autenticacion">Iniciar Sesion</a></button>
+            <button id="log-out"><a href="/autenticacion">Registrate</a></button>
         </div>
         <div class="scroll-indicator">
         <div class="progress-bar">
@@ -217,41 +217,41 @@
     </section>
     <section class="contenedor-contactanos" id="contacto">
        <article>
-        <form class="form">
+        <form class="form" method="POST" action="/form-contacto">
             <p class="title">Contactanos y te daremos toda la información </p>
             <p class="message">Si Polimericos Dial tuviera un sinonimo, sería ¡CALIDAD!.
 
                 #1 de Colombia ¿Qué esperas para contactarnos?</p>
                 <div class="flex">
                 <label>
-                    <input class="input" type="text" placeholder="" required="">
+                    <input class="input" type="text" placeholder="" required name="nombres_cont">
                     <span>Nombres</span>
                 </label>
         
                 <label>
-                    <input class="input" type="text" placeholder="" required="">
+                    <input class="input" type="text" placeholder="" required name="apellidos_cont">
                     <span>Apellido</span>
                 </label>
             </div>  
                     
             <div class="flex">
                 <label>
-                    <input class="input" type="text" placeholder="" required="">
+                    <input class="input" type="email" placeholder="" required name="email_cont">
                     <span>Email</span>
                 </label>
         
                 <label>
-                    <input class="input" type="text" placeholder="" required="">
+                    <input class="input" type="number" placeholder="" required name="numero_tlf_cont">
                     <span>Número de teléfono</span>
                 </label>
             </div>  
             <div class="flex">
                 <label>
-                    <input class="input" type="text" placeholder="" required="">
+                    <input class="input" type="text" placeholder="" required name="asunto_cont">
                     <span>¿En que estas interesado?</span>
                 </label>
             </div> 
-            <button id="contactar" type="submit"><a href=""> Enviar <i class="fa-solid fa-paper-plane"></i> </a></button> 
+            <button id="contactar" type="submit"><a> Enviar <i class="fa-solid fa-paper-plane"></i> </a></button> 
         </form>
        </article>
        <aside>
@@ -292,9 +292,9 @@
               <li><a href="#">Cursos virtuales</a></li>
             </ul>
             <ul class="box input-box">
-              <li class="link_name">Subscribete</li>
+              <li class="link_name">Suscribete</li>
               <li><input type="text" placeholder="Ingresa tu email"></li>
-              <li><input type="button" value="Subscribirme"></li>
+              <li><input type="button" value="Suscribirme"></li>
             </ul>
           </div>
         </div>

@@ -74,8 +74,10 @@
                         <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
                     </div>
                 </div>
-            </section>
+            </section> 
+            {{#if contactos}}
             <section class="table__body">
+                
                 <table>
                     <thead>
                         <tr>
@@ -88,24 +90,36 @@
                             <th> Opciones <span class="icon-arrow">&UpArrow;</span></th>
                         </tr>
                     </thead>
+                   
                     <tbody>
+                       
+                        {{#each contactos}}
                         <tr>
-                            <td> 1 </td>
-                            <td>Jhoann Zamudio</td>
-                            <td> sebastianzamudio2004@gmail.com</td>
-                            <td> 3028307706</td>
-                            <td> adquirir sus servicios para mi autolavado</td>
-                            <td> 01 Jun, 2024 </td>
+                            <td> {{id}}</td>
+                            <td>{{nombres_cont}} {{apellidos_cont}}</td>
+                            <td> {{email_cont}}</td>
+                            <td> {{numero_tlf_cont}}</td>
+                            <td> {{asunto_cont}}</td>
+                            <td> {{fecha}}</td>
                             <td> <div class="opciones">
                                 <a href=""><i class="fa-solid fa-trash"></i></a>
                                 <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
                             </div></td>
+                       </tr>
+                        {{/each}}
                        
                     </tbody>
+                   
                 </table>
+              
             </section>
+              {{else}}
+                       <h3>
+                            No hay registros aun
+                       </h3>
+                       {{/if}}
         </main>
     </section>
 
-    <script src="/js/dmin.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
