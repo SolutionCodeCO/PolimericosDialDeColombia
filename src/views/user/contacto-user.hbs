@@ -1,0 +1,124 @@
+<title>Contactarme con Dial</title>
+<link rel="stylesheet" href="/css/usuario.css">
+
+<body>
+  <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">Bienvenido :D</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="buscar..." />
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a href="/usuario">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="/usuario/testimonio-user">
+                    <i class="bx bx-chat"></i>
+                    <span class="links_name">Testimonios</span>
+                </a>
+                <span class="tooltip">Testimonios</span>
+            </li>
+            <li>
+                <a href="/usuario/contacto-user">
+                    <i class="bx bx-pie-chart-alt-2"></i>
+                    <span class="links_name">Contactarme</span>
+                </a>
+                <span class="tooltip">Contactarme</span>
+            </li>
+
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="profile.jpg" alt="profileImg" />
+                    <div class="name_job">
+                        <div class="name">Prem Shahi</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="text">Contactarme</div>
+
+        <button id="open">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <span>Crear</span>
+          </button>
+          
+     
+
+    </section>
+
+    <div id="modal_container" class="modal-container">
+        <div class="modal">
+          <div class="titulos">
+            <div class="loader"></div><h1>Contactarme</h1>
+          </div>
+          
+          <p>
+           Llena correctamente el formulario para que Dial te contacte en breve
+          </p>
+          <br>
+          <form action="#" method="post">
+            
+        
+            <div class="input-group">
+              <textarea name="comentario_user" id="" cols="30" rows="10"></textarea>
+            </div>
+    
+           
+              <div class="grupo-btn-modal">
+            <a id="close" type="reset">Cancelar</a>
+            <button id="open">
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                        fill="currentColor"
+                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <span>Contactar</span>
+              </button>
+              </div>
+           
+          </form>
+         
+        </div>
+      </div>
+
+    <script src="/js/usuario.js"></script>
+</body>

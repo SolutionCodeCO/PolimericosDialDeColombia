@@ -17,6 +17,27 @@
     color: var(--dark);
 }
 
+.task{
+    animation: task 5s infinite;
+    transition: .5s;
+    color: var(--white);
+    text-shadow: 0 0 10px var(--white);
+
+    
+
+}
+
+@keyframes task {
+    0%{
+        transform: translateY(-10px);
+    }50%{
+        transform: translateY(0px);
+    }75%{
+        transform: translateY(10px);
+    }100%{
+        transform: translateY(0px);
+    }
+}
 
 .notificacion{
     position: absolute;
