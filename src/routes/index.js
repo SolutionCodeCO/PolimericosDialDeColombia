@@ -3,8 +3,9 @@ const router = express.Router()
 const pool = require ('../database')
 
 
-router.get('/', (req, res)=>{
-    res.render('index/index')
+router.get('/', async (req, res)=>{
+    const testimonios = await pool.query('SELECT * FROM testimonios')
+    res.render('index/index', {testimonios})
 })
 
 router.post('/form-contacto', async(req, res)=>{
@@ -26,6 +27,6 @@ router.post('/form-contacto', async(req, res)=>{
 
     pool.query('INSERT INTO contactos set ?', [newContacto])
    
-    res.send("enviado al admini")
+    res.redirect('/')
 })
 module.exports = router

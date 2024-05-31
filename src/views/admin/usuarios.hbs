@@ -81,7 +81,9 @@
                     </div>
                 </div>
             </section>
+           {{#if usuarios}}
             <section class="table__body">
+                
                 <table>
                     <thead>
                         <tr>
@@ -92,20 +94,37 @@
                             <th> Opciones <span class="icon-arrow">&UpArrow;</span></th>
                         </tr>
                     </thead>
+                   
                     <tbody>
+                       
+                        {{#each usuarios}}
                         <tr>
-                            <td> 1 </td>
-                            <td>Jhoann Zamudio</td>
-                            <td> SolutionCodeco@gmail.com </td>
-                            <td> 01 Jun, 2024 </td>
+                            <td> {{id}}</td>
+                            <td>{{nombre}}</td>
+                            <td> {{email}}</td>
+                            <td> {{timeago fecha_creacion}}</td>
                             <td> <div class="opciones">
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                <a href="/usuarios/{{id}}"><i class="fa-solid fa-trash"></i></a>
                                 <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
                             </div></td>
+                       </tr>
+                        {{/each}}
                        
                     </tbody>
+                   
                 </table>
+              
             </section>
+             {{else}}
+            <div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+
+                <p>Oh... Nadie se ha registrado aún. </p>
+            </div>
+
+            {{/if}}
         </main>
     </section>
 
