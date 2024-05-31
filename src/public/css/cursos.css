@@ -301,6 +301,26 @@ nav li a:hover:after {
     width: 100%;
     justify-content: space-between;
   }
+
+  .opciones_list
+{
+  display: flex;
+  gap: 10px;
+}
+.opciones_list i{
+  border: 2px solid var(--white);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 50%;
+  color: var(--white);
+  transition: .5s;
+}
+.opciones_list i:hover{
+  background-color: var(--gold);
+  scale: 1.2;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
   
 #btn-playlist {
     border: 2px solid var(--gold);

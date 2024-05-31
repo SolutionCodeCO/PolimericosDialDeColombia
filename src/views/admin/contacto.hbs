@@ -21,6 +21,13 @@
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
+             <li>
+                <a href="/administrador/aprendizaje">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="links_name">Aprendizaje</span>
+                </a>
+                <span class="tooltip">Aprendizaje</span>
+            </li>
             <li>
                 <a href="/administrador/usuarios">
                     <i class="bx bx-user"></i>
@@ -113,11 +120,16 @@
                 </table>
               
             </section>
-              {{else}}
-                       <h3>
-                            No hay registros aun
-                       </h3>
-                       {{/if}}
+             {{else}}
+            <div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+
+                <p>Oh... Nadie se ha contactado con nosotros :(. </p>
+            </div>
+
+            {{/if}}
         </main>
     </section>
 

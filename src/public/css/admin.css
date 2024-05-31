@@ -250,14 +250,235 @@
   font-weight: 500;
   margin: 18px
 }
+.header-list{
+  color: var(--gold);
+  font-size: 22px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.empty-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  font-size: 40px;
+  width: 100%;
+}
+.opciones_list
+{
+  display: flex;
+  gap: 10px;
+}
+.opciones_list i{
+  border: 2px solid var(--dark);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 50%;
+  color: var(--dark);
+  transition: .5s;
+}
+.opciones_list i:hover{
+  background-color: var(--gold);
+  scale: 1.2;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+button {
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--gold);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1rem;
+  text-align: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  user-select: none;
+  letter-spacing: 1px;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  transition: all .6s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+  background-color: var(--dark);
+  cursor: pointer;
+}
+
+button:focus,button:active {
+  opacity: .85;
+  box-shadow: none;
+}
+
+button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.modal-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.589);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  z-index: 99999;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: #fff;
+  width: 600px;
+  max-width: 100%;
+  padding: 30px 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  height: 350px;
+}
+
+.modal h1 {
+  margin: 0;
+  color: var(--caoba);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.modal p {
+  font-size: 14px;
+  color: var(--caoba);
+}
+
+.input-group{
+  margin: 10px 0;
+}
+.input {
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  border-radius: .5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--dark);
+  font-size: 1rem;
+  transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.label {
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .9rem;
+  font-weight: bold;
+  color: var(--dark);
+  transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.input:hover, .input:focus, .input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label, .input:focus {
+  color: var(--dark);
+}
+
+.modal .grupo-btn-modal a{
+  font-family: inherit;
+  font-size: 17px;
+  color: var(--gold);
+  padding: 0.7em 3em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 18px;
+  border: 2px solid var(--gold);
+}
+.modal .grupo-btn-modal{
+  display: flex;
+  justify-content: center;
+}
+button {
+  font-family: inherit;
+  font-size: 17px;
+  background: var(--dark-ligth);
+  color: white;
+  padding: 0.7em 3em;
+
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 18px;
+
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
 .categorias{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     min-height: 80vh;
     align-items: center;
+    flex-wrap: wrap;
 }
 .e-card {
-    margin: 50px;
+    margin: 20px;
     background: transparent;
     box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
     position: relative;
@@ -367,10 +588,91 @@
   color: var(--dark);
   font-size: 20px;
 }
+.bloque {
+  overflow: hidden;
+  padding: 30px 20px;
+  width: 100%;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  width: 270px;
+  height: 100%;
+  transition: all 0.4s;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  box-shadow: var(--shadow);
+  margin: 10px;
+}
 
+.card:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: translateY(-8px);
+}
+.card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.titulo {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.titulo p {
+  font-size: 13px;
+  font-weight: lighter;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.footer_curso {
+  padding: 0 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#btn-playlist {
+  border: 2px solid var(--gold);
+  padding: 10px 15px;
+  margin: 0 5px;
+  width: 100%;
+  box-shadow: 0 5px 15px var(--gold);
+  background-color: transparent;
+  transition: .3s;
+}
+
+#btn-playlist:hover {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0);
+
+}
+
+#btn-playlist a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 16px;
+}
   main.table {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     backdrop-filter: blur(7px);
     border-radius: .8rem;
     padding: 30px;
@@ -560,6 +862,7 @@ thead th.active,tbody td.active {
 
 .export__file {
     position: relative;
+    pointer-events: none;
 }
 
 .export__file .export__file-btn {

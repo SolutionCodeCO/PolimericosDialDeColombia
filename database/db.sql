@@ -1,4 +1,3 @@
-
 -- Tabla de roles
 CREATE TABLE Roles (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,7 +19,7 @@ CREATE TABLE Cursos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100) NOT NULL,
     descripcion TEXT,
-    precio_Curso varchar(50),
+    precio_Curso VARCHAR(50),
     fecha_publicacion DATE
 );
 
@@ -42,6 +41,22 @@ CREATE TABLE Contactos (
     numero_tlf VARCHAR(255) NOT NULL,
     asunto TEXT NOT NULL,
     fecha DATE NOT NULL
+);
+
+-- Nueva tabla de playlists
+CREATE TABLE Playlists (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT
+);
+
+-- Tabla intermedia para la relación muchos a muchos entre Playlists y Cursos
+CREATE TABLE Playlist_Cursos (
+    playlist_id INT,
+    curso_id INT,
+    PRIMARY KEY (playlist_id, curso_id),
+    FOREIGN KEY (playlist_id) REFERENCES Playlists(id),
+    FOREIGN KEY (curso_id) REFERENCES Cursos(id)
 );
 
 -- Insertar roles iniciales

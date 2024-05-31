@@ -49,142 +49,40 @@
       </div>
 
         <div class="bloque">
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="/img/cursos-free/c9.jpg" alt="" />
+                {{#if playlist}}
+            {{#each playlist}}
+                <div class="card">
+                    <div class="first-content">
+                        <div class="image">
+                            <img src="/img/login-r.webp" alt="" />
+                        </div>
+                        <div class="titulo">
+                            <h2>{{nombre}}</h2>
+                            <p>{{descripcion}}</p>
+                        </div>
+                       <div class="opciones_list">
+                        <a href="{{id}}"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        
+                       </div>
+                    </div>
                 </div>
-                <div class="titulo">
-                  <h2>Curso de tecnicas de pintura automotriz VOL.3</h2>
-                  <p>Aprende como aplicar PINTURA AUTOMOTRIZ o AUTOMOTIVA en sistema de alto relieve facil,rapido y sencillo.</p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-                </div>
-            </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c8.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Curso de pintura automotriz VOL.2 / master painter celebrity</h2>
-                  <p>En esta edición de nuestro curso de pintura automotriz 2021 queremos dar a conocer nuevas tecnicas para llevar tu negocio al siguiente nivel, así que prepárate para la evolución de la industria automotriz y participa por la certificación MASTER PAINTER CELEBRITY.
-                    Recuerda que en la edición del 2020 tuvimos un curso muy completo desde el alistamiento y aun estas a tiempo de aprender las tecnicas.</p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
-            </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c7.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Curso de pintura automotriz profesional paso a paso</h2>
-                  <p>
-                    En nuestro curso te enseñaremos paso a paso lo necesario para que puedas ser un PINTOR AUTOMOTRIZ, tendrás la oportunidad de certificarte totalmente gratis no te pierdas ninguno de nuestros vídeos y SUSCRIBETE.
-          
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
+ {{/each}}
 
-              </div>
             </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c6.jpg" alt="" />
+           
+            {{else}}
+            <div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
                 </div>
-                <div class="titulo">
-                  <h2>Curso online gratis y certificado de comunicación efectiva</h2>
-                  <p>
-                    En el primer vídeo encontraras como poder participar de este maravilloso curso, aquí comenzaremos a subir los tutoriales y dejar las respectivas tareas.
-          
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
+
+                <p>Oh... No hay playlists que mostrar por ahora. </p>
             </div>
+
+            {{/if}}
+
+
           
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c5.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Porcelanato liquido 3d curso practico</h2>
-                  <p>
-                    En nuestro curso de PORCELANATO LIQUIDO 3D paso a paso y en español, podrás aprender a realizar las tecnicas de MARMOLIZADO, PIGMENTADOS, METALIZADO, MIREYADOS Y PISOS 3D. Así que no te pierdas de esta CAPACITACIÓN GRATUITA de talla internacional.
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
-            </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c4.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Pinturas especiales y efectos novedosos (auto motriz)</h2>
-                  <p>
-                    stamos en vanguardia frente a las ultimas técnicas en pinturas, ejemplo el trabajo realizado en nuestro taller, un vehículo totalmente pintado en técnica holografía, si quiere aprender esta y muchas mas técnicas visita nutras redes sociales. 
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
-            </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c3.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Nuevos metodos para cromar sin costosas maquinas</h2>
-                  <p>
-                    Te gustaria ser parte del nuevo sistema que esta cambiando el mundo, te presentamos nuestro proximo estreno que se realizara el 14 y 15 de diciembre de 2019 y estara a la venta apartir del 1 de febrero de 2020 comunicate hoy mismo al 3115227755.
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
-            </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c2.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Curso hidrocromo, cromo al agua o efecto espejo</h2>
-                  <p>
-                    Que este 2020 llegue la innovacion a tu negocio, nunca fue tan facil cromar y personalizar cualquier objeto, aprende con los mejores comunicate hoy mismo 3115227755
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
-            </div>
-          
-            <div class="card">
-              <div class="first-content">
-                <div class="image">
-                  <img src="../assets/img/cursos-free/c1.jpg" alt="" />
-                </div>
-                <div class="titulo">
-                  <h2>Hidrografia o hidroimpresion curso</h2>
-                  <p>
-                    estas listo para llevar tu negocio al siguiente nivel? ven y aprende con los mejores del continente, si compartes este vídeo recibe un 10% adicional de descuento en nuestros cursos totalmente prácticos.
-                  </p>
-                </div>
-                <button id="btn-playlist"><a href="">PlayList <i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
-              </div>
-            </div>
-          
-            
           </div>
     </section>
   <script src="/js/main.js"></script>

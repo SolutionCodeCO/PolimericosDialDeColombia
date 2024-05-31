@@ -1,0 +1,187 @@
+<title>Aprendizaje</title>
+<link rel="stylesheet" href="/css/admin.css">
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">Polimericos Dial de CO</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="buscar..." />
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a href="/administrador">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="/administrador/aprendizaje">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="links_name">Aprendizaje</span>
+                </a>
+                <span class="tooltip">Aprendizaje</span>
+            </li>
+            <li>
+                <a href="/administrador/usuarios">
+                    <i class="bx bx-user"></i>
+                    <span class="links_name">Usuarios</span>
+                </a>
+                <span class="tooltip">Usuarios</span>
+            </li>
+            <li>
+                <a href="/administrador/testimonios">
+                    <i class="bx bx-chat"></i>
+                    <span class="links_name">Testimonios</span>
+                </a>
+                <span class="tooltip">Testimonios</span>
+            </li>
+            <li>
+                <a href="/administrador/contacto">
+                    <i class="bx bx-pie-chart-alt-2"></i>
+                    <span class="links_name">Contacto</span>
+                </a>
+                <span class="tooltip">Contacto</span>
+            </li>
+
+            <li class="profile">
+                <div class="profile-details">
+                    
+                    <div class="name_job">
+                        <div class="name">Prem Shahi</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class="bx bx-log-out" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <main class="table" id="customers_table">
+            <section class="table__header">
+                <h1>Gestion de Aprendizaje</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="Buscar...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                        <label>Export As &nbsp; &#10140;</label>
+                        <label for="export-file" id="toPDF">PDF</label>
+                        <label for="export-file" id="toJSON">JSON </label>
+                        <label for="export-file" id="toCSV">CSV </label>
+                        <label for="export-file" id="toEXCEL">EXCEL </label>
+                    </div>
+                </div>
+            </section>
+            <div class="header-list">
+                <h3>PlayLists</h3>
+                <button id="open">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+                            stroke="#fffffff" stroke-width="2"></path>
+                        <path d="M17 15V18M17 21V18M17 18H14M17 18H20" stroke="#fffffff" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    Añadir playlist
+                </button>
+            </div>
+
+
+            
+            <div class="bloque">
+                {{#if playlist}}
+            {{#each playlist}}
+                <div class="card">
+                    <div class="first-content">
+                        <div class="image">
+                            <img src="/img/login-r.webp" alt="" />
+                        </div>
+                        <div class="titulo">
+                            <h2>{{nombre}}</h2>
+                            <p>{{descripcion}}</p>
+                        </div>
+                       <div class="opciones_list">
+                        <a href="{{id}}"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                       </div>
+                    </div>
+                </div>
+ {{/each}}
+
+            </div>
+           
+            {{else}}
+            <div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+
+                <p>Oh... No hay playlists que mostrar por ahora, crea una. </p>
+            </div>
+
+            {{/if}}
+
+
+            </div>
+        </main>
+        <div id="modal_container" class="modal-container">
+            <div class="modal">
+                <div class="titulos">
+                    <div class="loader"></div>
+                    <h1>Registrar PlayList</h1>
+                </div>
+
+                <p>
+                    Llena correctamente el formulario para crear correctamente la playlist.
+                </p>
+                <br>
+                <form action="/form_playlist " method="post">
+
+
+                    <div class="input-group">
+                        <label class="label">Titulo:</label>
+                        <input autocomplete="off" name="nombre" id="Email" class="input" type="text">
+                    </div>
+                    <div class="input-group">
+                        <label class="label">descripción:</label>
+                        <input autocomplete="off" name="descripcion" id="Email" class="input" type="text">
+                    </div>
+                    
+
+
+                    <div class="grupo-btn-modal">
+                        <a id="close" type="reset">Cancelar</a>
+                        <button id="open">
+                            <div class="svg-wrapper-1">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path fill="currentColor"
+                                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span>Crear</span>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/admin.js"></script>
+</body>
