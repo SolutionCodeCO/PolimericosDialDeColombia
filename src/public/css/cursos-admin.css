@@ -325,6 +325,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+  .bloque a{
+    text-decoration: none;
+  }
   .card {
     width: 270px;
     height: 100%;
@@ -534,7 +537,7 @@ button:hover .svg-wrapper {
     padding: 30px 50px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    height: 450px;
+    height: 510px;
   }
   
   .modal h1 {

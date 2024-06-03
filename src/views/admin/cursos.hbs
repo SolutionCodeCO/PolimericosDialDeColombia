@@ -4,7 +4,7 @@
 {{#if user}}
 
 <body>
-   <div class="sidebar">
+    <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">Polimericos Dial de CO</div>
             <i class="bx bx-menu" id="btn"></i>
@@ -53,22 +53,22 @@
 
             <li class="profile">
                 <div class="profile-details">
-                    
+
                     <div class="name_job">
                         <div class="name">{{user.nombre}}</div>
                         <div class="job">{{user.email}}</div>
                     </div>
                 </div>
-               <a href="/logout"> <i class="bx bx-log-out" id="log_out"></i></a>
+                <a href="/logout"> <i class="bx bx-log-out" id="log_out"></i></a>
             </li>
         </ul>
     </div>
     <section class="home-section">
-     <section class="contenedor-cursos">
-        <div class="header-list-cursos">
-             <h4>{{playlist.nombre}}</h4>
+        <section class="contenedor-cursos">
+            <div class="header-list-cursos">
+                <h4>{{playlist.nombre}}</h4>
 
-             <button id="open">
+                <button id="open">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -79,25 +79,29 @@
                     </svg>
                     Añadir Cursos
                 </button>
-        </div>
-       
-        <div class="tarjeta-busqueda">
-            
-            <div class="container-input">
-                <input type="search" placeholder="Busca algun curso" name="text" class="input1">
-                <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
-              </svg>
-              </div>
+            </div>
 
-              <div class="cantidad">
-                Cantidad de cursos: <span>139</span>
-              </div>
-      </div>
+            <div class="tarjeta-busqueda">
 
-       <div class="bloque">
-                {{#if  cursos.length}}
-            {{#each cursos}}
+                <div class="container-input">
+                    <input type="search" placeholder="Busca algun curso" name="text" class="input1">
+                    <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+
+                <div class="cantidad">
+                    Cantidad de cursos: <span>{{contador_cursos}}</span>
+                </div>
+            </div>
+
+            <div class="bloque">
+                {{#if cursos.length}}
+                {{#each cursos}}
+                <a href="{{enlace}}" target="_blank">
                 <div class="card">
                     <div class="first-content">
                         <div class="image">
@@ -110,16 +114,19 @@
                             <h2>{{titulo}}</h2>
                             <p>{{descripcion}}</p>
                         </div>
-                       <div class="opciones_list">
-                        <a href="/administrador/playlist/{{../playlist.id}}/delete-curso/{{this.id}}" onclick="return confirm('¿Estás seguro de que quieres eliminar este curso?');"><i class="fa-solid fa-trash"></i></a>
-                        <a href="/aprendizaje/editar/cursos/{{id}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                       </div>
+                        <div class="opciones_list">
+                            <a href="/administrador/playlist/{{../playlist.id}}/delete-curso/{{this.id}}"
+                                onclick="return confirm('¿Estás seguro de que quieres eliminar este curso?');"><i
+                                    class="fa-solid fa-trash"></i></a>
+                            <a href="/aprendizaje/editar/cursos/{{id}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </div>
                     </div>
                 </div>
- {{/each}}
+                </a>
+                {{/each}}
 
             </div>
-           
+
             {{else}}
             <div class="empty-list">
                 <div class="icon-list">
@@ -130,9 +137,9 @@
             </div>
 
             {{/if}}
-    </section>
+        </section>
 
-       <div id="modal_container" class="modal-container">
+        <div id="modal_container" class="modal-container">
             <div class="modal">
                 <div class="titulos">
                     <div class="loader"></div>
@@ -145,7 +152,10 @@
                 <br>
                 <form action="/administrador/playlist/{{playlist.id}}/add-curso" method="post">
 
-
+                    <div class="input-group">
+                        <label class="label">Enlace:</label>
+                        <input autocomplete="off" name="enlace" id="Email" class="input" type="text">
+                    </div>
                     <div class="input-group">
                         <label class="label">Titulo:</label>
                         <input autocomplete="off" name="titulo" id="Email" class="input" type="text">
@@ -188,11 +198,11 @@
 </body>
 {{else}}
 <div class="empty-list">
-                <div class="icon-list">
-                    <i class="fa-regular fa-circle-xmark"></i>
-                </div>
+    <div class="icon-list">
+        <i class="fa-regular fa-circle-xmark"></i>
+    </div>
 
-                <p>Oh, oh Debes <a href="/autenticacion">iniciar sesion</a> primero </p>
-            </div>
+    <p>Oh, oh Debes <a href="/autenticacion">iniciar sesion</a> primero </p>
+</div>
 
 {{/if}}

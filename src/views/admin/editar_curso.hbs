@@ -98,7 +98,10 @@
                         </div>
                           <form action="/form_curso/edit/{{curso.id}}" method="post">
 
-
+  <div class="input-group">
+                        <label class="label">Enlace:</label>
+                        <input autocomplete="off" name="enlace" id="Email" class="input" type="text" value="{{curso.enlace}}">
+                    </div>
                     <div class="input-group">
                         <label class="label">Titulo:</label>
                         <input autocomplete="off" name="titulo" id="Email" class="input" type="text" value="{{curso.titulo}}">

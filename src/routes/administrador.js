@@ -223,9 +223,10 @@ router.get('/aprendizaje/cursos/:id', estaLogueado,async (req, res) => {
 
 router.post('/administrador/playlist/:id/add-curso', estaLogueado,async (req, res) => {
     const { id } = req.params;
-    const { titulo, descripcion, precio_Curso } = req.body;
+    const { enlace, titulo, descripcion, precio_Curso } = req.body;
 
     const newCurso = {
+        enlace,
         titulo,
         descripcion,
         precio_Curso
@@ -285,19 +286,18 @@ router.get('/aprendizaje/editar/cursos/:id', estaLogueado,async (req, res) => {
 
 router.post('/form_curso/edit/:id', estaLogueado,async (req, res) => {
     const { id } = req.params;
-    const { titulo, descripcion, precio_Curso } = req.body;
-    const updateCurso = { titulo, descripcion, precio_Curso};
+    const { enlace, titulo, descripcion, precio_Curso } = req.body;
+    const updateCurso = { enlace, titulo, descripcion, precio_Curso};
 
     try {
         await pool.query("UPDATE cursos set ? WHERE id = ?", [updateCurso, id]);
         req.flash('success', '¡Curso actualizado con éxito!');
-        res.redirect("/administrador/aprendizaje");
+        res.redirect(`/administrador/aprendizaje`);
 
 
     } catch (error) {
         req.flash('error', 'Error al actualizar el curso');
-        res.redirect("/administrador/aprendizaje");
-
+        res.redirect(`/administrador/aprendizaje`);
     }
 });
 module.exports = router
