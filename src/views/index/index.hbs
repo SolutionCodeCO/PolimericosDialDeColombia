@@ -177,7 +177,7 @@
             </p>
            
             <div class="details">
-              <span class="name">{{usuario_id}}</span>
+              <span class="name">{{this.usuario_nombre}}</span>
               <span class="job">{{timeago fecha}}</span>
             </div>
           </div>
@@ -189,7 +189,14 @@
       </div>
       
       {{else}}
-      <p>no day</p>
+     <div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+
+                <p>Oh... Nadie ha comentado aun. </p>
+            </div>
+
       {{/if}}
 
       <p class="task">Recuerda que si deseas dejar tu testimonio debes registrarte y comentar</p>
@@ -271,9 +278,9 @@
               <li><a href="#">Cursos virtuales</a></li>
             </ul>
             <ul class="box input-box">
-              <li class="link_name">Suscribete</li>
-              <li><input type="text" placeholder="Ingresa tu email"></li>
-              <li><input type="button" value="Suscribirme"></li>
+              <li class="link_name">Iniciar Session</li>
+              <li><a href="/autenticacion"><input type="button" value="Registrarme"></a></li>
+              <li><a href="/autenticacion"><input type="button" value="Iniciar Sesion"></a></li>
             </ul>
           </div>
         </div>

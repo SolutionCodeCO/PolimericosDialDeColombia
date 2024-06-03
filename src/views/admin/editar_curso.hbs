@@ -1,0 +1,158 @@
+<title>Editar curso {{curso.id}}</title>
+<link rel="stylesheet" href="/css/editar_playlist.css">
+
+{{#if user}}
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">Polimericos Dial de CO</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="buscar..." />
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a href="/administrador">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="/administrador/aprendizaje">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="links_name">Aprendizaje</span>
+                </a>
+                <span class="tooltip">Aprendizaje</span>
+            </li>
+            <li>
+                <a href="/administrador/usuarios">
+                    <i class="bx bx-user"></i>
+                    <span class="links_name">Usuarios</span>
+                </a>
+                <span class="tooltip">Usuarios</span>
+            </li>
+            <li>
+                <a href="/administrador/testimonios">
+                    <i class="bx bx-chat"></i>
+                    <span class="links_name">Testimonios</span>
+                </a>
+                <span class="tooltip">Testimonios</span>
+            </li>
+            <li>
+                <a href="/administrador/contacto">
+                    <i class="bx bx-pie-chart-alt-2"></i>
+                    <span class="links_name">Contacto</span>
+                </a>
+                <span class="tooltip">Contacto</span>
+            </li>
+
+            <li class="profile">
+                <div class="profile-details">
+                    
+                    <div class="name_job">
+                        <div class="name">{{user.nombre}}</div>
+                        <div class="job">{{user.email}}</div>
+                    </div>
+                </div>
+               <a href="/logout"> <i class="bx bx-log-out" id="log_out"></i></a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <main class="table" id="customers_table">
+            <section class="table__header">
+                <h1>Editar curso</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="Buscar...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                        <label>Export As &nbsp; &#10140;</label>
+                        <label for="export-file" id="toPDF">PDF</label>
+                        <label for="export-file" id="toJSON">JSON </label>
+                        <label for="export-file" id="toCSV">CSV </label>
+                        <label for="export-file" id="toEXCEL">EXCEL </label>
+                    </div>
+                </div>
+            </section>
+            <div class="header-list">
+                <h3>Curso: {{curso.titulo}}</h3>
+            </div>
+
+
+            
+            <div class="bloque">
+    
+                <div class="card">
+                    <div class="first-content">
+                        <div class="image">
+                            <img src="/img/login-r.webp" alt="" />
+                        </div>
+                          <form action="/form_curso/edit/{{curso.id}}" method="post">
+
+
+                    <div class="input-group">
+                        <label class="label">Titulo:</label>
+                        <input autocomplete="off" name="titulo" id="Email" class="input" type="text" value="{{curso.titulo}}">
+                    </div>
+                    <div class="input-group">
+                        <label class="label">descripción:</label>
+                        <input autocomplete="off" name="descripcion" id="Email" class="input desp" type="text" value="{{curso.descripcion}}">
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Precio:</label>
+                        <input autocomplete="off" name="precio_Curso" id="Email" class="input desp" type="text" value="{{curso.precio_Curso}}">
+                    </div>
+                    
+
+
+                    <div class="grupo-btn-modal">
+                        <button id="open">
+                            <div class="svg-wrapper-1">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path fill="currentColor"
+                                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span>Editar</span>
+                        </button>
+                    </div>
+
+                </form>
+                      
+                    </div>
+                </div>
+
+
+            </div>
+        
+
+
+            </div>
+        </main>
+    </section>
+
+    <script src="/js/admin.js"></script>
+</body>
+{{else}}
+<div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+
+                <p>Oh, oh Debes <a href="/autenticacion">iniciar sesion</a> primero </p>
+            </div>
+
+{{/if}}

@@ -6,7 +6,7 @@
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-            <form action="index.html" autocomplete="off" class="sign-in-form">
+            <form action="/autenticacion/login" method="post"  autocomplete="off" class="sign-in-form">
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h4>Polimericos Internacional</h4>
@@ -25,6 +25,7 @@
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    name="email"
                     required
                   />
                   <label>Email</label>
@@ -36,6 +37,7 @@
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    name="password"
                     required
                   />
                   <label>Contraseña</label>
@@ -50,7 +52,7 @@
               </div>
             </form>
 
-            <form action="index.html" autocomplete="off" class="sign-up-form">
+            <form action="/autenticacion/registroUsuario" method="post" autocomplete="off" class="sign-up-form">
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h4>Polimericos Internacional</h4>
@@ -69,9 +71,10 @@
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    name="nombre"
                     required
                   />
-                  <label>Nombres</label>
+                  <label>Nombre completo</label>
                 </div>
 
                 <div class="input-wrap">
@@ -79,6 +82,7 @@
                     type="email"
                     class="input-field"
                     autocomplete="off"
+                    name="email"
                     required
                   />
                   <label>Email</label>
@@ -90,21 +94,12 @@
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    name="password"
                     required
                   />
                   <label>Contraseña</label>
                 </div>
 
-                <div class="input-wrap">
-                    <input
-                      type="password"
-                      minlength="4"
-                      class="input-field"
-                      autocomplete="off"
-                      required
-                    />
-                    <label>Repite la contraseña</label>
-                  </div>
 
                 <input type="submit" value="Crear cuenta" class="sign-btn" />
 
@@ -119,9 +114,9 @@
 
           <div class="carousel">
             <div class="images-wrapper">
-              <img src="./img/image1.png" class="image img-1 show" alt="" />
-              <img src="./img/image2.png" class="image img-2" alt="" />
-              <img src="./img/image3.png" class="image img-3" alt="" />
+              <img src="/img/image1.png" class="image img-1 show" alt="" />
+              <img src="/img/image2.png" class="image img-2" alt="" />
+              <img src="/img/image3.png" class="image img-3" alt="" />
             </div>
 
             <div class="text-slider">

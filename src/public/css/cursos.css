@@ -1,4 +1,17 @@
-
+:root {
+    --dark: #222831;
+    --dark-ligth: #31363F;
+    --white: #EEEEEE;
+    --gold: #c7a438;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
+  }
 body {
     background: var(--dark);
 }
@@ -182,7 +195,16 @@ nav li a:hover:after {
     text-decoration: none;
     font-size: 16px;
 }
-
+.empty-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    font-size: 40px;
+    width: 100%;
+    color: var(--white);
+  }
 .contenedor-cursos {
     position: relative;
     margin-top: 9%;
@@ -250,6 +272,7 @@ nav li a:hover:after {
     align-items: center;
     flex-wrap: wrap;
   }
+  
   .card {
     width: 270px;
     height: 100%;
@@ -269,6 +292,19 @@ nav li a:hover:after {
   .card img {
     width: 100%;
     border-radius: 10px 10px 0 0;
+  }
+  .image{
+    position: relative;
+  }
+  .image .precio span{
+    color: var(--dark);
+    z-index: 2;
+    background-color: var(--gold);
+    position:absolute;
+    right: 0;
+    top: -5px;
+    padding: 2px 15px;
+    font-size: 15px;
   }
 
   .first-content {

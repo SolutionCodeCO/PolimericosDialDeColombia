@@ -231,7 +231,7 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: var(--white);
   min-height: 100vh;
   top: 0;
   left: 78px;
@@ -367,7 +367,7 @@ button svg {
 .input-group{
   margin: 10px 0;
 }
-.input {
+.input1 {
   width: 100%;
   height: 44px;
   background-color: transparent;
@@ -387,12 +387,12 @@ button svg {
   transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
-.input:hover, .input:focus, .input-group:hover .input {
+.input1:hover, .input1:focus, .input-group:hover .input1 {
   outline: none;
   border-color: #05060f;
 }
 
-.input-group:hover .label, .input:focus {
+.input-group:hover .label, .input1:focus {
   color: var(--dark);
 }
 
@@ -726,7 +726,6 @@ button:active {
 .table__body {
     width: 95%;
     max-height: calc(90% - 1.6rem);
-    background-color: #fffb;
 
     margin: .8rem auto;
     border-radius: .6rem;
@@ -781,9 +780,6 @@ thead th {
     text-transform: capitalize;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #0000000b;
-}
 
 tbody tr {
     --delay: .1s;
@@ -857,7 +853,7 @@ thead th.asc span.icon-arrow{
 }
 
 thead th.active,tbody td.active {
-    color: #6c00bd;
+    color: var(--gold);
 }
 
 .export__file {
@@ -869,7 +865,7 @@ thead th.active,tbody td.active {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(images/export.png) center / 80% no-repeat;
+    background: transparent;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
@@ -912,7 +908,7 @@ thead th.active,tbody td.active {
     display: block;
     width: 100%;
     padding: .6rem 0;
-    background-color: #f2f2f2;
+    background-color: var(--white);
     
     display: flex;
     justify-content: space-around;

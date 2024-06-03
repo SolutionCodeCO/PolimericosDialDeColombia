@@ -1,6 +1,7 @@
 <title>Bienvenido nuevamente</title>
 <link rel="stylesheet" href="/css/admin.css">
 
+{{#if user}}
 
 <body>
     <div class="sidebar">
@@ -52,18 +53,18 @@
 
             <li class="profile">
                 <div class="profile-details">
-                    <img src="profile.jpg" alt="profileImg" />
+                    
                     <div class="name_job">
-                        <div class="name">Prem Shahi</div>
-                        <div class="job">Web designer</div>
+                        <div class="name">{{user.nombre}}</div>
+                        <div class="job">{{user.email}}</div>
                     </div>
                 </div>
-                <i class="bx bx-log-out" id="log_out"></i>
+               <a href="/logout"> <i class="bx bx-log-out" id="log_out"></i></a>
             </li>
         </ul>
     </div>
     <section class="home-section">
-        <div class="text">Dashboard</div>
+        <div class="text">Dashboard:</div>
 
         <div class="categorias">
             <a href="/administrador/aprendizaje">
@@ -160,3 +161,14 @@
 
     <script src="/js/admin.js"></script>
 </body>
+{{else}}
+<div class="empty-list">
+                <div class="icon-list">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+
+                <p>Oh, oh Debes <a href="/autenticacion">iniciar sesion</a> primero </p>
+            </div>
+
+{{/if}}
+

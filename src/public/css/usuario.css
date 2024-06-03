@@ -406,7 +406,15 @@
   margin-top: 1.5rem;
 }
 
-
+.empty-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  font-size: 40px;
+  width: 100%;
+}
 button {
   font-family: inherit;
   font-size: 20px;
